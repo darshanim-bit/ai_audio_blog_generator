@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - AI Blog Generator</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100 font-sans antialiased">
+    <!-- navbar -->
+    <nav class="bg-gray-800 text-white p-4 flex justify-between items-center">
+        <div>
+            <h1 class="text-3xl font-bold">AI Blog Generator</h1>
+        </div>
+        <div>
+            <a href="/" class="text-white hover:underline ml-4">Home</a>
+            <a href="signup" class="text-white hover:underline ml-4">Signup</a>
+        </div>
+    </nav>
+    <!-- main content  -->
+    <div class=" flex items-center justify-center h-screen">
+        <div class="bg-white p-8 shadow-md rounded-lg w-full max-w-md">
+
+            <!-- Login Form -->
+             <form class="space-y-4"  method="post">
+                {% csrf_token %}
+                
+                <h2 class="text-xl font-semibold align-center">Login</h2>
+                {% if error %}
+                    <p class="text-red-500">{{ error }}</p>
+                {% endif %}
+                <div>
+                    <lable for="Username">Username</lable>
+                    <input type="text" id="username" name="username" class="w-full p-2 border border-gray-300 rounded mt-1" placeholder="Username .....">
+                </div>
+                <div>
+                    <lable for="Password">Password</lable>
+                    <input type="password" id="password" name="password" class="w-full p-2 border border-gray-300 rounded mt-1" placeholder="********">
+                </div>
+               
+                <div>
+                    <button type="submit" class="w-full bg-blue-600 text-white py-2 rounded-md hover:bg-blue-700 transition-colors">Login</button>
+
+                </div>
+             </form>
+            
+
+        </div>
+
+    </div>
+    <footer class="text-center p-4 text-black mt-6">
+        powered by <a href="https://github.com/darshanmantur">Darshan mantur</a>
+    </footer>
+
+</body>
+</html>

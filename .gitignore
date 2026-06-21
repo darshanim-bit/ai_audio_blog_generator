@@ -1,0 +1,6 @@
+Backend/ai_blog_app/media/
+*.mp3
+__pycache__/
+*.pyc
+db.sqlite3
+.env
